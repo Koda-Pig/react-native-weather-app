@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import { Feather } from '@expo/vector-icons'
-import { pastelColors } from '../utils/colors'
+import pastelColors from '../utils/colors'
 
 const CurrentWeather = () => {
   return (
