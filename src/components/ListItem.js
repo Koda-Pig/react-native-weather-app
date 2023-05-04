@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import { Feather } from '@expo/vector-icons'
-import pastelColors from '../utils/colors'
+import colors from '../utils/colors'
 
 const ListItem = props => {
   const { dt_txt, min, max, condition } = props
@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     borderWidth: 5,
-    backgroundColor: pastelColors.purple,
-    borderColor: pastelColors.lightPurple
+    backgroundColor: colors.purple,
+    borderColor: colors.lightPurple
   },
   date: {
     color: 'white',

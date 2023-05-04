@@ -1,7 +1,8 @@
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import { Feather } from '@expo/vector-icons'
-import pastelColors from '../utils/colors'
+import colors from '../utils/colors'
 import RowText from '../components/RowText'
+import { weatherType } from '../utilities/weatherType'
 
 const CurrentWeather = () => {
   const {
@@ -34,8 +35,8 @@ const CurrentWeather = () => {
         containerStyles={bodyWrapper}
         message1Styles={description}
         message2Styles={message}
-        message1="It's sunny"
-        message2="It's perfect T-shirt weather"
+        message1="Sunny"
+        message2={weatherType.Clear.message}
       />
     </SafeAreaView>
   )
@@ -44,7 +45,7 @@ const CurrentWeather = () => {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: pastelColors.lightPurple
+    backgroundColor: colors.lightPurple
   },
   container: {
     flex: 1,
@@ -52,18 +53,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   temp: {
-    color: 'black',
+    color: colors.eigengrau,
     fontSize: 48
   },
   feels: {
-    color: 'black',
+    color: colors.eigengrau,
     fontSize: 30
   },
   highLowWrapper: {
     flexDirection: 'row'
   },
   highLow: {
-    color: 'black',
+    color: colors.eigengrau,
     fontSize: 20
   },
   bodyWrapper: {

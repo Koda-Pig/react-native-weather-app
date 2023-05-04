@@ -6,7 +6,7 @@ import {
   StatusBar,
   ImageBackground
 } from 'react-native'
-import pastelColors from '../utils/colors'
+import colors from '../utils/colors'
 import ListItem from '../components/ListItem'
 
 const DATA = [
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: pastelColors.purple
+    backgroundColor: colors.purple
   },
   image: {
     flex: 1

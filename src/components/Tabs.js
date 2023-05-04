@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import CurrentWeather from '../screens/CurrentWeather'
 import UpcomingWeather from '../screens/UpcomingWeather'
 import City from '../screens/City'
+import colors from '../utils/colors'
 
 const Tab = createBottomTabNavigator()
 
@@ -10,8 +11,20 @@ const Tabs = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray'
+        tabBarActiveTintColor: colors.red,
+        tabBarInactiveTintColor: 'gray',
+        tabBarStyle: {
+          backgroundColor: colors.lighterPurple
+        },
+        headerStyle: {
+          backgroundColor: colors.lighterPurple
+        },
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 25,
+          color: colors.eigengrau
+        },
+        headerTitleAlign: 'center'
       }}
     >
       <Tab.Screen
@@ -22,7 +35,7 @@ const Tabs = () => {
             <Feather
               name="droplet"
               size={25}
-              color={focused ? 'tomato' : 'black'}
+              color={focused ? colors.red : colors.eigengrau}
             />
           )
         }}
@@ -35,7 +48,7 @@ const Tabs = () => {
             <Feather
               name="clock"
               size={25}
-              color={focused ? 'tomato' : 'black'}
+              color={focused ? colors.red : colors.eigengrau}
             />
           )
         }}
@@ -48,7 +61,7 @@ const Tabs = () => {
             <Feather
               name="home"
               size={25}
-              color={focused ? 'tomato' : 'black'}
+              color={focused ? colors.red : colors.eigengrau}
             />
           )
         }}
