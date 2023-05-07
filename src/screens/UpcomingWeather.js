@@ -5,7 +5,7 @@ import {
   StatusBar,
   ImageBackground
 } from 'react-native'
-import colors from '../utils/colors'
+import colors from '../utilities/colors'
 import ListItem from '../components/ListItem'
 
 const UpcomingWeather = ({ weatherData }) => {

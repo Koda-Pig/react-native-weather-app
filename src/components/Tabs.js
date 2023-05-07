@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import CurrentWeather from '../screens/CurrentWeather'
 import UpcomingWeather from '../screens/UpcomingWeather'
 import City from '../screens/City'
-import colors from '../utils/colors'
+import colors from '../utilities/colors'
 
 const Tab = createBottomTabNavigator()
 

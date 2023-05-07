@@ -24,8 +24,6 @@ const City = ({ weatherData }) => {
   } = styles
   const { name, country, population, sunrise, sunset } = weatherData
 
-  console.log(sunrise)
-
   return (
     <SafeAreaView style={container}>
       <ImageBackground

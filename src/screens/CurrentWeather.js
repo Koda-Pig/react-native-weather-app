@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import { Feather } from '@expo/vector-icons'
-import colors from '../utils/colors'
+import colors from '../utilities/colors'
 import RowText from '../components/RowText'
 import { weatherType } from '../utilities/weatherType'
 
@@ -22,37 +22,37 @@ const CurrentWeather = ({ weatherData }) => {
     weather
   } = weatherData
 
-  const weatherCondition = weather[0].main
+  const weatherCondition = weather[0]?.main
 
   return (
     <SafeAreaView
       style={[
         wrapper,
-        { backgroundColor: weatherType[weatherCondition].backgroundColor }
+        { backgroundColor: weatherType[weatherCondition]?.backgroundColor }
       ]}
     >
       <View style={container}>
         <Feather
-          name={weatherType[weatherCondition].icon}
+          name={weatherType[weatherCondition]?.icon}
           size={100}
           color="white"
         />
-        <Text style={tempStyles}>{temp}</Text>
-        <Text style={feels}>Feels like {feels_like}</Text>
+        <Text style={tempStyles}>{Math.round(temp)}°</Text>
+        <Text style={feels}>Feels like {Math.round(feels_like)}°</Text>
         <RowText
           containerStyles={highLowWrapper}
           message1Styles={highLow}
           message2Styles={highLow}
-          message1={`High: ${temp_max} `}
-          message2={`Low: ${temp_min}`}
+          message1={`High: ${Math.round(temp_max)}° `}
+          message2={`Low: ${Math.round(temp_min)}°`}
         />
       </View>
       <RowText
         containerStyles={bodyWrapper}
         message1Styles={description}
         message2Styles={message}
-        message1={weather[0].description}
-        message2={weatherType[weatherCondition].message}
+        message1={weather[0]?.description}
+        message2={weatherType[weatherCondition]?.message}
       />
     </SafeAreaView>
   )
@@ -60,8 +60,7 @@ const CurrentWeather = ({ weatherData }) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1,
-    backgroundColor: colors.lightPurple
+    flex: 1
   },
   container: {
     flex: 1,
@@ -90,10 +89,10 @@ const styles = StyleSheet.create({
     marginBottom: 40
   },
   description: {
-    fontSize: 48
+    fontSize: 43
   },
   message: {
-    fontSize: 30
+    fontSize: 25
   }
 })
 
