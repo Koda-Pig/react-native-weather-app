@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet } from 'react-native'
-import { Feather } from '@expo/vector-icons'
 import colors from '../utilities/colors'
 import { weatherType } from '../utilities/weatherType'
 import moment from 'moment'
@@ -10,7 +9,7 @@ const ListItem = props => {
 
   return (
     <View style={item}>
-      <Feather name={weatherType[condition]?.icon} size={50} color={'white'} />
+      {weatherType[condition]?.icon(80)}
       <View style={dateTextWrapper}>
         <Text style={date}>{moment(dt_txt).format('dddd')}</Text>
         <Text style={date}>{moment(dt_txt).format('h:mm a')}</Text>

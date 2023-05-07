@@ -1,5 +1,4 @@
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
-import { Feather } from '@expo/vector-icons'
 import colors from '../utilities/colors'
 import RowText from '../components/RowText'
 import { weatherType } from '../utilities/weatherType'
@@ -32,11 +31,7 @@ const CurrentWeather = ({ weatherData }) => {
       ]}
     >
       <View style={container}>
-        <Feather
-          name={weatherType[weatherCondition]?.icon}
-          size={100}
-          color="white"
-        />
+        {weatherType[weatherCondition]?.icon(150)}
         <Text style={tempStyles}>{Math.round(temp)}°</Text>
         <Text style={feels}>Feels like {Math.round(feels_like)}°</Text>
         <RowText

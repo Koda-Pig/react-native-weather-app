@@ -2,7 +2,6 @@ import {
   SafeAreaView,
   StyleSheet,
   FlatList,
-  StatusBar,
   ImageBackground
 } from 'react-native'
 import colors from '../utilities/colors'
@@ -40,7 +39,6 @@ const UpcomingWeather = ({ weatherData }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
     backgroundColor: colors.purple
   },
   image: {
