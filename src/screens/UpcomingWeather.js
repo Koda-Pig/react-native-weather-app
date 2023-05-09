@@ -4,7 +4,6 @@ import {
   FlatList,
   ImageBackground
 } from 'react-native'
-import colors from '../utilities/colors'
 import ListItem from '../components/ListItem'
 
 const UpcomingWeather = ({ weatherData }) => {
@@ -23,8 +22,9 @@ const UpcomingWeather = ({ weatherData }) => {
   return (
     <SafeAreaView style={container}>
       <ImageBackground
-        source={require('../../assets/backgrounds/upcoming-background.jpg')}
+        source={require('../../assets/backgrounds/thunderstorm.jpg')}
         style={image}
+        imageStyle={{ opacity: 0.5 }}
       >
         <FlatList
           data={weatherData}
@@ -39,7 +39,7 @@ const UpcomingWeather = ({ weatherData }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.purple
+    backgroundColor: 'black'
   },
   image: {
     flex: 1

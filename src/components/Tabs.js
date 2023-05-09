@@ -25,7 +25,7 @@ const Tabs = ({ weather }) => {
     return (
       <Tab.Navigator
         screenOptions={{
-          tabBarActiveTintColor: colors.red,
+          tabBarActiveTintColor: colors.eigengrau,
           tabBarInactiveTintColor: 'gray',
           tabBarStyle: {
             backgroundColor: colors.lighterPurple,
@@ -35,7 +35,7 @@ const Tabs = ({ weather }) => {
             backgroundColor: colors.lighterPurple
           },
           headerTitleStyle: {
-            fontSize: 25,
+            fontSize: 40,
             color: colors.eigengrau,
             fontFamily: 'source-bold'
           },
@@ -49,7 +49,7 @@ const Tabs = ({ weather }) => {
               <Feather
                 name="droplet"
                 size={25}
-                color={focused ? colors.red : colors.eigengrau}
+                color={focused ? colors.eigengrau : 'gray'}
               />
             ),
             ...TabStyles
@@ -64,7 +64,7 @@ const Tabs = ({ weather }) => {
               <Feather
                 name="clock"
                 size={25}
-                color={focused ? colors.red : colors.eigengrau}
+                color={focused ? colors.eigengrau : 'gray'}
               />
             ),
             ...TabStyles
@@ -79,7 +79,7 @@ const Tabs = ({ weather }) => {
               <Feather
                 name="home"
                 size={25}
-                color={focused ? colors.red : colors.eigengrau}
+                color={focused ? colors.eigengrau : 'gray'}
               />
             ),
             ...TabStyles

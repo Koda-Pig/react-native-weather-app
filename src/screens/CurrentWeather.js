@@ -5,7 +5,6 @@ import {
   StyleSheet,
   ImageBackground
 } from 'react-native'
-import colors from '../utilities/colors'
 import RowText from '../components/RowText'
 import { weatherType } from '../utilities/weatherType'
 import { useFonts } from 'expo-font'
@@ -37,15 +36,11 @@ const CurrentWeather = ({ weatherData }) => {
 
   if (fontsLoaded) {
     return (
-      <SafeAreaView
-        style={[
-          wrapper,
-          { backgroundColor: weatherType[weatherCondition]?.backgroundColor }
-        ]}
-      >
+      <SafeAreaView style={[wrapper, { backgroundColor: 'black' }]}>
         <ImageBackground
-          source={require('../../assets/backgrounds/clouds.jpg')}
+          source={weatherType[weatherCondition]?.backgroundImage}
           style={image}
+          imageStyle={{ opacity: 0.5 }}
         >
           <View style={container}>
             {weatherType[weatherCondition]?.icon(150)}
@@ -85,12 +80,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   tempStyles: {
-    color: colors.eigengrau,
+    color: 'white',
     fontSize: 48,
     fontFamily: 'source-regular'
   },
   feels: {
-    color: colors.eigengrau,
+    color: 'white',
     fontSize: 30,
     fontFamily: 'source-regular'
   },
@@ -98,23 +93,25 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   highLow: {
-    color: colors.eigengrau,
+    color: 'white',
     fontSize: 20,
     fontFamily: 'source-regular'
   },
   bodyWrapper: {
     justifyContent: 'flex-end',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     paddingLeft: 25,
     marginBottom: 40
   },
   description: {
-    fontSize: 43,
-    fontFamily: 'source-regular'
+    fontSize: 35,
+    fontFamily: 'source-regular',
+    color: 'white'
   },
   message: {
-    fontSize: 25,
-    fontFamily: 'source-regular'
+    fontSize: 20,
+    fontFamily: 'source-regular',
+    color: 'white'
   }
 })
 

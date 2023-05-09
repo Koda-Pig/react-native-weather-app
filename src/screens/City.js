@@ -34,13 +34,14 @@ const City = ({ weatherData }) => {
         <ImageBackground
           source={require('../../assets/backgrounds/city-background.jpg')}
           style={imageLayout}
+          imageStyle={{ opacity: 0.5 }}
         >
           <Text style={[cityText, cityName]}>{name}</Text>
           <Text style={[cityText, countryName]}>{country}</Text>
           <View style={[populationWrapper, rowLayout]}>
             <IconText
               iconName="user"
-              iconColor="red"
+              iconColor="white"
               bodyText={'Population: ' + population}
               bodyTextStyles={populationText}
             />
@@ -67,16 +68,19 @@ const City = ({ weatherData }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'black'
   },
   imageLayout: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'center'
   },
   cityName: {
     fontSize: 40
   },
   countryName: {
-    fontSize: 30
+    fontSize: 30,
+    marginBottom: 20
   },
   cityText: {
     justifyContent: 'center',
@@ -86,17 +90,17 @@ const styles = StyleSheet.create({
   },
   populationWrapper: {
     justifyContent: 'center',
-    marginTop: 30
+    marginTop: 40
   },
   populationText: {
     fontSize: 25,
     marginLeft: 7.5,
-    color: 'red',
+    color: 'white',
     fontFamily: 'source-regular'
   },
   riseSetWrapper: {
     justifyContent: 'space-around',
-    marginTop: 30
+    marginTop: 50
   },
   riseSetText: {
     fontSize: 20,

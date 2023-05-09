@@ -36,8 +36,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     borderWidth: 5,
-    backgroundColor: colors.red,
-    borderColor: colors.lightPurple
+    backgroundColor: 'rgba(22, 22, 29, 0.6)',
+    borderColor: colors.lightPurple,
+    borderRadius: 10
   },
   dateTextWrapper: {
     flexDirection: 'column'
