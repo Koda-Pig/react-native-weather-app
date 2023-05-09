@@ -2,23 +2,29 @@ import { View, Text, StyleSheet } from 'react-native'
 import colors from '../utilities/colors'
 import { weatherType } from '../utilities/weatherType'
 import moment from 'moment'
+import { useFonts } from 'expo-font'
 
 const ListItem = props => {
   const { dt_txt, min, max, condition } = props
   const { item, dateTextWrapper, date, temp } = styles
+  const [fontsLoaded] = useFonts({
+    'source-regular': require('../../assets/fonts/SourceSansPro-Regular.ttf')
+  })
 
-  return (
-    <View style={item}>
-      {weatherType[condition]?.icon(80)}
-      <View style={dateTextWrapper}>
-        <Text style={date}>{moment(dt_txt).format('dddd')}</Text>
-        <Text style={date}>{moment(dt_txt).format('h:mm a')}</Text>
+  if (fontsLoaded) {
+    return (
+      <View style={item}>
+        {weatherType[condition]?.icon(80)}
+        <View style={dateTextWrapper}>
+          <Text style={date}>{moment(dt_txt).format('dddd')}</Text>
+          <Text style={date}>{moment(dt_txt).format('h:mm a')}</Text>
+        </View>
+        <Text style={temp}>
+          {Math.round(min)}° / {Math.round(max)}°
+        </Text>
       </View>
-      <Text style={temp}>
-        {Math.round(min)}° / {Math.round(max)}°
-      </Text>
-    </View>
-  )
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -38,11 +44,13 @@ const styles = StyleSheet.create({
   },
   date: {
     color: 'white',
-    fontSize: 15
+    fontSize: 15,
+    fontFamily: 'source-regular'
   },
   temp: {
     color: 'white',
-    fontSize: 20
+    fontSize: 20,
+    fontFamily: 'source-regular'
   }
 })
 
