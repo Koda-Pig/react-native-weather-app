@@ -10,13 +10,14 @@ const UpcomingWeather = ({ weatherData }) => {
   const renderItem = ({ item }) => {
     return (
       <ListItem
-        condition={item.weather[0].main}
         dt_txt={item.dt_txt}
         min={item.main.temp_min}
         max={item.main.temp_max}
+        icon={item.weather[0].icon}
       />
     )
   }
+
   const { container, image } = styles
 
   return (

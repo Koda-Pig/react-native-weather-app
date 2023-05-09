@@ -6,7 +6,7 @@ import {
   ImageBackground
 } from 'react-native'
 import RowText from '../components/RowText'
-import { weatherType } from '../utilities/weatherType'
+import { weatherType, weatherIcon } from '../utilities/weatherType'
 import { useFonts } from 'expo-font'
 
 const CurrentWeather = ({ weatherData }) => {
@@ -43,7 +43,7 @@ const CurrentWeather = ({ weatherData }) => {
           imageStyle={{ opacity: 0.5 }}
         >
           <View style={container}>
-            {weatherType[weatherCondition]?.icon(150)}
+            {weatherIcon(weather[0].icon, 150)}
             <Text style={tempStyles}>{Math.round(temp)}°</Text>
             <Text style={feels}>Feels like {Math.round(feels_like)}°</Text>
             <RowText

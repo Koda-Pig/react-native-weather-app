@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native'
 import colors from '../utilities/colors'
-import { weatherType } from '../utilities/weatherType'
+import { weatherIcon } from '../utilities/weatherType'
 import moment from 'moment'
 import { useFonts } from 'expo-font'
 
 const ListItem = props => {
-  const { dt_txt, min, max, condition } = props
+  const { dt_txt, min, max, icon } = props
   const { item, dateTextWrapper, date, temp } = styles
   const [fontsLoaded] = useFonts({
     'source-regular': require('../../assets/fonts/SourceSansPro-Regular.ttf')
@@ -14,7 +14,7 @@ const ListItem = props => {
   if (fontsLoaded) {
     return (
       <View style={item}>
-        {weatherType[condition]?.icon(80)}
+        {weatherIcon(icon, 80)}
         <View style={dateTextWrapper}>
           <Text style={date}>{moment(dt_txt).format('dddd')}</Text>
           <Text style={date}>{moment(dt_txt).format('h:mm a')}</Text>
